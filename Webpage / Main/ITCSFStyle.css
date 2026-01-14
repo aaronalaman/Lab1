@@ -1,25 +1,28 @@
 /* =========================
-   Base styles (minimal) -- Feel free to change these to match your style!
+   Reset & box-sizing
    ========================= */
 
+/* Apply border-box sizing so padding/borders don't affect element width */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* Base page styling */
 body {
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   line-height: 1.5;
   color: #222;
-  background: #fff;
+  background: #ffffff;
 }
 
 /* =========================
    Accessibility
    ========================= */
 
+/* Skip link for keyboard users to jump to main content */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -29,6 +32,7 @@ body {
   color: #fff;
 }
 
+/* Make skip link visible when focused */
 .skip-link:focus {
   top: 0;
 }
@@ -37,61 +41,235 @@ body {
    Global spacing
    ========================= */
 
+/* Consistent padding for major layout elements */
 header,
 main,
 footer,
 section {
-  padding: 1rem;
+  padding: 1rem 1.5rem;
 }
 
-/* =========================
-   Typography (intentionally plain)
-   ========================= */
-
+/* Headings spacing and readability */
 h1,
 h2 {
   line-height: 1.25;
+  margin-bottom: 1rem;
 }
 
+/* List spacing */
 ul {
   padding-left: 1.25rem;
+  margin-bottom: 1rem;
 }
 
+/* Space between list items */
 li {
   margin-bottom: 0.5rem;
 }
 
 /* =========================
-   Forms (bare minimum)
+   Side-by-side sections
    ========================= */
 
+/* Layout container for two-column sections */
+.side-by-side {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;              /* Allows wrapping on smaller screens */
+  margin-bottom: 3rem;
+  align-items: flex-start;
+}
+
+/* Left column (intro content) */
+#introCS {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Right column (details + register) */
+#details-column {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;                  /* Space between stacked cards */
+}
+
+/* =========================
+   Card / Box styling
+   ========================= */
+
+/* Shared card appearance for grouped sections */
+.section-grouping {
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Divider line between sections */
+hr {
+  border: none;
+  border-top: 1px solid #000000;
+  margin: 2rem 0;
+}
+
+/* =========================
+   Form styling
+   ========================= */
+
+/* Constrain form width for readability */
+.register-form {
+  max-width: 700px;
+}
+
+/* Row layout for side-by-side form fields */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Group label + input vertically */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label appearance */
 label {
-  display: block;
   font-weight: 600;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
+/* Input and textarea styling */
 input,
-button {
-  font: inherit;
-}
-
-input {
+textarea {
   width: 100%;
-  padding: 0.4rem;
-  margin-bottom: 1rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
+/* Primary button styling */
 button {
-  padding: 0.6rem 1rem;
+  padding: 0.75rem 1.5rem;
   cursor: pointer;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #4a90e2;
+  color: #fff;
+  width: 100%;
+  max-width: 250px;
+  display: block;
+  margin-top: 1rem;
+  margin: 1rem 0 0.75rem;
 }
 
-/*
-  Everything else is intentionally left for you to design:
-  - layout
-  - hierarchy
-  - spacing
-  - emphasis
-  - visual grouping
-*/
+/* Button hover state */
+button:hover {
+  background-color: #357ab8;
+}
+
+/* =========================
+   Register link
+   ========================= */
+
+/* Alternative link styled like a button */
+.register-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #4a90e2;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  margin: 1rem 0 0.75rem;
+}
+
+/* Hover state for register link */
+.register-link:hover {
+  background-color: #357ab8;
+}
+
+/* =========================
+   Responsive adjustments
+   ========================= */
+
+/* Mobile-friendly layout changes */
+@media (max-width: 700px) {
+  /* Stack side-by-side sections vertically */
+  .side-by-side {
+    flex-direction: column;
+  }
+
+  /* Stack form fields vertically on small screens */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Full-width button on mobile */
+  button {
+    width: 100%;
+  }
+}
+
+/* =========================
+   Header & Footer
+   ========================= */
+
+/* Header branding text */
+header p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Footer heading spacing */
+footer h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* Footer text styling */
+footer p {
+  margin: 0;
+  font-style: normal; /* Keeps italics only on <i> tags */
+}
+
+/* Footer links */
+footer a {
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+/* Footer link hover state */
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Miscellaneous
+   ========================= */
+
+/* Subtitle text under headings */
+.subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-top: -10px; /* Pull subtitle closer to heading */
+}
+
+/* Price badge pill styling */
+.price-badge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px; /* Pill shape */
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #4a90e2;
+  background-color: #eaf2fd;
+}

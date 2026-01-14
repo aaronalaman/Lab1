@@ -1,82 +1,121 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Workshop Registration</title>
-  <meta name="description" content="Register for a free, in-person workshop." />
 
-  <link rel="stylesheet" href="ITCSFStyle.css" />
+  <meta name="description" content="Register for a free, in-person computer science fundamentals workshop.">
+
+  <link rel="stylesheet" href="ITCSFStyle.css">
 </head>
+
 <body>
-  <!-- Accessibility: allow keyboard users to skip repetitive content -->
   <a href="#main" class="skip-link">Skip to main content</a>
 
   <header>
-    <!-- Organization name or branding -->
-    <p>Community Career Center</p>
+    <p>Computer Science Career Center</p>
+    <hr>
   </header>
 
   <main id="main">
-    <section>
-      <h1>Intro to Computer Science Fundamentals</h1>
+    <div class="side-by-side">
 
-      <p>
-        <b>Purpose</b>
-        The purpose of this workshop is for beginners who seek to start their journey in Computer Science
-        or to strengthen their knowledge in CS fundamentals that'll continue to carry on as you learn more.
-      </p>
-      <p>
-        <b>Why is this important?</b>
-        When tackling CS concepts, having a strong knowledge on the fundamentals will carry through as you
-        learn new topics, new programming languages, and increase your problem-solving & critical thinking skills
-        which is critical in the Computer Science field. 
-      </p>
+      <!-- Left column -->
+      <section class="section-grouping" id="introCS">
+        <p class="price-badge"><b>Free Workshop</b></p>
+        <h1>Intro to Computer Science Fundamentals</h1>
 
-      <!-- Key details -->
-      <h2><b>Details</b></h2>
-      <p>
-        <b>When: </b> June 27th @ 10AM - 5:00PM
-      </p>
-      <p><b>Modality: </b> In-person
-      </p>
-      <p>
-        <b>Location: </b> <i>**insert location**</i>
-      </p>
-      <p>
-        <b>Price: </b> Free! Lunch will be provided.
-      </p>
+        <h2>Purpose</h2>
+        <p>
+          The purpose of this workshop is for beginners who seek to start their journey in computer science
+          or strengthen their understanding of core CS fundamentals.
+        </p>
 
-      <!-- Primary action: exactly one -->
-      <a href="#register">Register</a>
-    </section>
+        <h2>Why is this important?</h2>
+        <p>
+          A strong foundation in computer science fundamentals supports long-term learning, improves
+          problem-solving skills, and makes new programming languages easier to pick up.
+        </p>
 
-    <!-- Supporting information -->
-    <section>
-      <h2>What you'll get</h2>
-      <ul>
-        <li>A solid understanding of key computer science concepts like algorithms, data structures, and computational thinking</li>
-        <li>Hands-on practice with basic programming exercises to apply what you learn</li>
-        <li>Improved problem-solving and critical thinking skills that can be applied to any programming language or CS topic</li>
-        <li>Confidence to continue learning more advanced computer science topics</li>
-        <li>Access to resources and guidance for next steps in your CS journey</li>
-      </ul>
-    </section>
+        <h2>What you'll get</h2>
+        <ul>
+          <li>Understanding of algorithms, data structures, and computational thinking</li>
+          <li>Improved problem-solving and critical thinking skills</li>
+          <li>Hands-on programming practice</li>
+          <li>Confidence to continue learning advanced computer science topics</li>
+          <li>Access to resources and guidance for next steps</li>
+        </ul>
 
-    <!-- Registration -->
-    <section id="register">
-      <h2>Register</h2>
+        <a href="#details-and-register" class="register-link">
+          Interested? Begin registration!
+        </a>
+        <p class="subtitle">Takes only about 30 seconds!</p>
+      </section>
 
-      <form action="#" method="post">
+      <!-- Right column -->
+      <div id="details-column">
+        <section class="section-grouping" id="details-and-register">
+          <h2>Workshop Details</h2>
+          <p class="subtitle">More details provided after registeration.</p>
+          <p><strong>Date:</strong> Saturday, June 27, 2026</p>
+          <p><strong>Time:</strong> 10:00 AM - 5:00 PM</p>
+          <p><strong>Location:</strong> In-person</p>
 
-        <button type="submit"></button>
-      </form>
-    </section>
+          <hr>
+
+          <h2>Register</h2>
+          <p class="subtitle">Enter your info below. You'll receive a confirmation email with the location details.</p>
+          <form class="register-form" method="post">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="studentName">Full Name</label>
+                <input
+                  type="text"
+                  id="studentName"
+                  name="studentName"
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="studentEmail">Email</label>
+                <input
+                  type="email"
+                  id="studentEmail"
+                  name="studentEmail"
+                  required
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="experience">What is your CS experience?</label>
+              <textarea
+                id="experience"
+                name="studentExperience"
+                rows="4"
+                maxlength="500"
+                placeholder="Briefly describe your background…"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit">Save my spot</button>
+            <p class="subtitle">We'll only use your email to send workshop details and reminders. No spam.</p>
+          </form>
+        </section>
+      </div>
+
+    </div>
   </main>
 
   <footer>
-    <p>Don't forget about footer content!</p>
+    <hr>
+    <h3>Questions?</h3>
+    <p>
+      Please reach out to: <i><a href="mailto:csfundamentalsworkshop@workshops.com">csfundamentalsworkshop@workshops.com</a></i>
+    </p>
   </footer>
 </body>
 </html>
